@@ -114,7 +114,7 @@ const defaultInsights: InsightItem[] = [
     id: '2',
     type: 'trend',
     title: 'Reduced transportation costs',
-    description: 'You've spent less on transportation this month compared to last month.',
+    description: 'You have spent less on transportation this month compared to last month.',
     impact: 'positive',
     category: 'Transportation',
     percentage: 18
@@ -123,7 +123,7 @@ const defaultInsights: InsightItem[] = [
     id: '3',
     type: 'warning',
     title: 'Entertainment budget alert',
-    description: 'You've used 85% of your entertainment budget with 10 days remaining.',
+    description: 'You have used 85% of your entertainment budget with 10 days remaining.',
     impact: 'neutral',
     category: 'Entertainment'
   },
