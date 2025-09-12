@@ -13,10 +13,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Bell, ChevronDown, Plus, Settings, User } from "lucide-react";
-import ExpenseSummary from "./ExpenseSummary";
-import TransactionsList from "./TransactionsList";
-import AIInsightsPanel from "./AIInsightsPanel";
-import AddExpenseForm from "./AddExpenseForm";
+import ExpenseSummary from "../components/ExpenseSummary";
+import TransactionsList from "../components/TransactionsList";
+import AIInsightsPanel from "../components/AIInsightsPanel";
+import AddExpenseForm from "../components/AddExpenseForm";
 
 const Home = () => {
   
