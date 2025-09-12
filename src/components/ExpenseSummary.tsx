@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -65,7 +65,7 @@ const ExpenseSummary = ({
         <div className="flex items-center space-x-2">
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="outline" className="h-8 border-dashed">
+              <Button className="h-8 border-dashed">
                 <Calendar className="mr-2 h-4 w-4" />
                 {dateRange?.from ? (
                   dateRange.to ? (

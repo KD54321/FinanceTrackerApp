@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import supabase from "../../supabaseClient";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -18,8 +19,10 @@ import AIInsightsPanel from "./AIInsightsPanel";
 import AddExpenseForm from "./AddExpenseForm";
 
 const Home = () => {
+  
   const [isAddExpenseOpen, setIsAddExpenseOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
+ 
 
   return (
     <div className="min-h-screen bg-background">
