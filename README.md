@@ -2,8 +2,6 @@
 
 A comprehensive financial tracking application that helps users monitor expenses, categorize spending, and receive AI-powered insights about their financial habits.
 
-![Smart Expense Tracker](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80)
-
 ##  Features
 
 ###  **Dashboard Overview**
@@ -69,7 +67,7 @@ A comprehensive financial tracking application that helps users monitor expenses
 5. **Open your browser**
    Navigate to `http://localhost:5173`
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **React 18** - Modern React with hooks
@@ -193,7 +191,7 @@ npm run type-check
 - **Lazy loading** for components
 - **Optimized images** with proper sizing
 
-## 🔧 Configuration
+##  Configuration
 
 ### Tailwind CSS
 Custom configuration in `tailwind.config.js` with:
