@@ -1,6 +1,22 @@
 import React, { useState } from "react";
 import supabase from "../../supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Car } from "lucide-react";
+import { Carousel } from "@/components/ui/carousel";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@radix-ui/react-dropdown-menu";
 
 interface LoginProps {
   onLoginSuccess?: (user:any) => void;
@@ -14,7 +30,12 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
   const handleLogin = async (e: React.FormEvent) =>{
     e.preventDefault();
-    const {data, error} = await supabase.auth.signInWithPassword({
+    setLoading(true);
+    if(email && password){
+      navigate("/");
+    }
+    //TODO: Implement login logic here
+    /*const {data, error} = await supabase.auth.signInWithPassword({
         email,
         password,
     });
@@ -23,20 +44,30 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     } else {
         onLoginSuccess(data.user);
         navigate("/");
-    }
+    }*/
     };
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-              <div><label>Email: </label>
-              <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required></input>
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle className="text-center">Welcome Back!</CardTitle>
+        </CardHeader>
+        <CardContent>
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div className="space-y-2"><Label>Email: </Label>
+              <input className="border-2 rounded-lg" type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required placeholder="example@email.com"></input>
               </div>
-              <div><label>Password: </label>
-              <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} required></input>
+              <div><Label>Password: </Label>
+              <input className="border-2 rounded-lg" type="password" value={password} onChange={(e)=> setPassword(e.target.value)} required placeholder ="******"></input>
               </div>
-              <button type="submit">Login</button>
+              <Button type="submit" className="w-full">Login</Button>
             </form>
+            <Separator className="my-4" />
+            <div className="text-sm text-center text-gray-600">
+              Don't have an account? <a href="/signup" className="text-blue-600 hover:underline">Sign Up</a>
+            </div>
+       </CardContent>
+        </Card>
         </div>
     )
   };
