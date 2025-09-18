@@ -48,17 +48,19 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     };
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
-      <Card className="w-[350px]">
+        {/* Logo or Image */}
+        <img src="/cat.avif" alt="Logo" className="absolute inset-0 w-full h-full object-cover opacity-70 z-0 pointer-events-none"/>
+      <Card className="w-[350px] z-10">
         <CardHeader>
           <CardTitle className="text-center">Welcome Back!</CardTitle>
         </CardHeader>
         <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-2"><Label>Email: </Label>
-              <input className="border-2 rounded-lg" type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required placeholder="example@email.com"></input>
+              <div className="flex flex-col w-full"><Label className="mb-1">Email: </Label>
+              <input className="border-2 rounded-lg p-1 w-full" type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required placeholder="example@email.com"></input>
               </div>
-              <div><Label>Password: </Label>
-              <input className="border-2 rounded-lg" type="password" value={password} onChange={(e)=> setPassword(e.target.value)} required placeholder ="******"></input>
+              <div className="flex flex-col w-full"><Label className="mb-1">Password: </Label>
+              <input className="border-2 rounded-lg p-1 w-full" type="password" value={password} onChange={(e)=> setPassword(e.target.value)} required placeholder ="******"></input>
               </div>
               <Button type="submit" className="w-full">Login</Button>
             </form>
